@@ -1,0 +1,14 @@
+/* Hide navigation to non-chat sections (redirects catch anything that slips through). */
+a[href="/"],
+a[href="/explore/"],
+a[href="/reels/"],
+a[href^="/reels/"],
+a[href^="/stories/"],
+a[href^="/threads"],
+a[href*="threads.net"],
+a[href*="threads.com"],
+a[href^="/explore/"],
+a[href="/accounts/activity/"],
+a[href="/meta-ai/"] {
+  display: none !important;
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "priority": 2,
+    "action": { "type": "allow" },
+    "condition": {
+      "regexFilter": "^https://www\\.instagram\\.com/(direct/|accounts/|challenge/|two_factor|auth_platform/|oauth/)",
+      "resourceTypes": ["main_frame"]
+    }
+  },
+  {
+    "id": 2,
+    "priority": 1,
+    "action": { "type": "redirect", "redirect": { "url": "https://www.instagram.com/direct/inbox/" } },
+    "condition": {
+      "urlFilter": "|https://www.instagram.com/",
+      "resourceTypes": ["main_frame"]
+    }
+  }
+]

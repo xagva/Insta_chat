@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Insta Chat Only",
+  "version": "1.0.0",
+  "description": "Locks instagram.com to Direct Messages only. No feed, reels, explore or stories.",
+  "permissions": ["declarativeNetRequest"],
+  "host_permissions": ["https://www.instagram.com/*"],
+  "declarative_net_request": {
+    "rule_resources": [{ "id": "redirects", "enabled": true, "path": "rules.json" }]
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.instagram.com/*"],
+      "js": ["lock.js"],
+      "css": ["hide.css"],
+      "run_at": "document_start"
+    }
+  ],
+  "browser_specific_settings": { "gecko": { "id": "insta-chat-only@local" } }
+}
